@@ -9,7 +9,10 @@ RUN mkdir /var/log/frr/
 RUN chown frr:frr /var/log/frr/
 
 RUN rm -r /etc/frr/*
-COPY frr/* /etc/frr/
+COPY frr/daemons /etc/frr/
+COPY frr/pimd.conf /etc/frr/
+COPY frr/staticd.conf /etc/frr/
+COPY frr/zebra.conf /etc/frr/
 RUN chown frr:frr /etc/frr/*
 
 ENTRYPOINT [ "/sbin/tini", "--", "/usr/lib/frr/docker-start" ]
