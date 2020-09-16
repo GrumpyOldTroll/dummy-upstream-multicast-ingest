@@ -1,0 +1,5 @@
+.*.sw?
+*.tar
+*.tar.gz
+~\$*.pptx
+.DS_Store
